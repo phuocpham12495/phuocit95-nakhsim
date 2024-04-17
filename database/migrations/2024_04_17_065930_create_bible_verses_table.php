@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('job_listings', function (Blueprint $table) {
+        Schema::create('bible_verses', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->string("company");
-            // $table->unsignedBigInteger("co_worker_id");
-            $table->foreignIdFor(\App\Models\CoWorker::class);
+            $table->string("verse");
+            $table->string("content");
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('job_listings');
+        Schema::dropIfExists('bible_verses');
     }
 };
