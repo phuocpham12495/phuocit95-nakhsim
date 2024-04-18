@@ -12,7 +12,7 @@
     <div class="min-h-full">
         <x-navigation></x-navigation>
 
-        <x-section heading="{{ $heading }}" description="{{ $description }}"></x-section>
+        <x-section-heading heading="{{ $heading }}" description="{{ $description }}"></x-section-heading>
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                 {{ $slot }}

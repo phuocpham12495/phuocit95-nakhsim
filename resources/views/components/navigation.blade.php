@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hidden md:block">
+            {{-- <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">
                     <button type="button"
                         class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="-mr-2 flex md:hidden">
                 <!-- Mobile menu button -->
                 <button type="button"
@@ -80,7 +80,7 @@
             <x-nav-link-mobile href="/about" active="{{ request()->is('about') }}">About</x-nav-link-mobile>
             {{-- <x-nav-link-mobile href="/contact" active="{{ request()->is('contact') }}">Contact</x-nav-link-mobile> --}}
         </div>
-        <div class="border-t border-gray-700 pb-3 pt-4">
+        {{-- <div class="border-t border-gray-700 pb-3 pt-4">
             <div class="flex items-center px-5">
                 <div class="flex-shrink-0">
                     <img class="h-10 w-10 rounded-full" src="/img/avatar.jpg" alt="">
@@ -100,6 +100,6 @@
                     </svg>
                 </button>
             </div>
-        </div>
+        </div> --}}
     </div>
 </nav>

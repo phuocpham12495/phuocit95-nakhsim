@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('bible_verses', function (Blueprint $table) {
             $table->id();
-            $table->string("verse");
-            $table->string("content");
+            $table->string("verse", 15);
+            $table->text("content");
             $table->timestamps();
         });
     }

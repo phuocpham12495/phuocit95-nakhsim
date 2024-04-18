@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:title>About</x-slot:title>
-    <x-slot:heading>About</x-slot:heading>
-    <x-slot:description>About this page</x-slot:description>
+    <x-slot:heading>About PhuocIt95</x-slot:heading>
+    <x-slot:description></x-slot:description>
 
     <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div
@@ -13,7 +13,7 @@
         <div class="mx-auto max-w-2xl lg:max-w-4xl">
             <figure class="mt-10">
                 <blockquote class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                    <p>“Psalm 119:11 - I have hidden your word in my heart that I might not sin against you..”</p>
+                    <p>“God will never leave me or forsake me. He makes me courageous. I am brave in Jesus Christ!”</p>
                 </blockquote>
                 <figcaption class="mt-10">
                     <img class="mx-auto h-10 w-10 rounded-full" src="/img/avatar.jpg" alt="">
