@@ -11,7 +11,7 @@
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <x-nav-link href="/" active="{{ request()->is('/') }}" type="a">Home</x-nav-link>
-                        <x-nav-link href="/bibleverse" active="{{ request()->is('bibleverse') }}" type="a">Bible
+                        <x-nav-link href="/bibleverses" active="{{ request()->is('bibleverses') }}" type="a">Bible
                             Verse</x-nav-link>
                         <x-nav-link href="/about" active="{{ request()->is('about') }}"
                             type="a">About</x-nav-link>
@@ -75,7 +75,7 @@
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <x-nav-link-mobile href="/" active="{{ request()->is('/') }}">Home</x-nav-link-mobile>
-            <x-nav-link-mobile href="/bibleverse" active="{{ request()->is('bibleverse') }}">Bible
+            <x-nav-link-mobile href="/bibleverses" active="{{ request()->is('bibleverses') }}">Bible
                 Verse</x-nav-link-mobile>
             <x-nav-link-mobile href="/about" active="{{ request()->is('about') }}">About</x-nav-link-mobile>
             {{-- <x-nav-link-mobile href="/contact" active="{{ request()->is('contact') }}">Contact</x-nav-link-mobile> --}}

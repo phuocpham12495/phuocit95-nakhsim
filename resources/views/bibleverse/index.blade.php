@@ -1,30 +1,21 @@
 <x-layout>
-    <x-slot:title>Job</x-slot:title>
-    <x-slot:heading>Job Page</x-slot:heading>
-    <x-slot:description>Job Description</x-slot:description>
+    <x-slot:title>Bible Verse</x-slot:title>
+    <x-slot:heading>Create and save bible verse</x-slot:heading>
+    <x-slot:description>Psalm 119:11 - I have hidden your word in my heart
+        that I might not sin against you.</x-slot:description>
 
-    <h3><strong>{{ $bibleverse['verse'] }}</strong></h3>
-    <p>{{ $bibleverse['content'] }}</p>
-
-    <div class="mt-5">
-        {{-- <x-button href="/me/jobs/{{ $job["id"] }}/edit">Edit Job</x-button> --}}
-        <x-button href="/bibleverse/{{ $bibleverse->id }}/edit">Edit Bible Verse</x-button>
+    <div class="mx-auto max-w-2xl lg:mx-0 m-5">
+        <x-button href="/bibleverses/create">Add Bible Verse</x-button>
     </div>
 
-    {{-- <div class="mt-5">
-        <form method="POST" action="/me/jobs/{{ $job->id }}">
-            @csrf
-            @method('DELETE')
-            <button type="submit"
-                class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Delete</button>
-        </form>
-    </div> --}}
-    <div class="mt-5">
-        <button form="form-delete"
-            class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Delete</button>
+    <div class="space-y-4">
+        @foreach ($bibleverses as $bibleverse)
+            <div class="block px-4 py-6 border border-gray-200 rounded-lg">
+                <a href="bibleverses/{{ $bibleverse['id'] }}" class="text-blue-500 hover:underline"><strong>Verse:
+                        {{ $bibleverse['verse'] }}</strong></a>
+                <div class="text-sm">Content: {{ $bibleverse->content }}</div>
+            </div>
+        @endforeach
     </div>
-    <form method="POST" action="/bibleverse/{{ $bibleverse->id }}" class="hidden" id="form-delete">
-        @csrf
-        @method('DELETE')
-    </form>
+    <div>{{ $bibleverses->links() }}</div>
 </x-layout>

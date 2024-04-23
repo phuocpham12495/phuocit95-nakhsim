@@ -3,7 +3,7 @@
     <x-slot:heading>Edit Bible Verse Page</x-slot:heading>
     <x-slot:description>Edit Bible Verse Description</x-slot:description>
 
-    <form method="POST" action="/bibleverse/{{ $bibleverse->id }}">
+    <form method="POST" action="/bibleverses/{{ $bibleverse->id }}">
         @csrf
         @method('PATCH')
         <div class="space-y-12">
@@ -60,7 +60,7 @@
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
             <a type="button" class="text-sm font-semibold leading-6 text-gray-900"
-                href="/bibleverse/{{ $bibleverse->id }}">Cancel</a>
+                href="/bibleverses/{{ $bibleverse->id }}">Cancel</a>
             <button type="submit"
                 class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>
         </div>

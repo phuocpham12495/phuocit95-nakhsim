@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UserSeeder::class);
 
-        // $this->call(BibleVerseSeeder::class);
+        $this->call(BibleVerseSeeder::class);
 
     }
 }
