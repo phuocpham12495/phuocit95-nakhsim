@@ -16,7 +16,7 @@
             <div
                 class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
                 <a href="/">Home<span aria-hidden="true">&rarr;</span></a>
-                <a href="/bibleverse">Bible Verse<span aria-hidden="true">&rarr;</span></a>
+                <a href="/bibleverses">Bible Verse<span aria-hidden="true">&rarr;</span></a>
                 <a href="/about">About<span aria-hidden="true">&rarr;</span></a>
                 {{-- <a href="/contact">Contact<span aria-hidden="true">&rarr;</span></a> --}}
             </div>
