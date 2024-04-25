@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BibleVerse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BibleVerseController extends Controller
 {
     public function index() {
-        $bibleverses = BibleVerse::paginate(10);
+        // $bibleverses = BibleVerse::paginate(10);
+        $authUserId = Auth::user()->id;
+        $bibleverses = DB::table('bible_verses')->where('user_id', '=', $authUserId)->orderBy("created_at", 'desc')->paginate(10);
         return view("bibleverse.index", ["bibleverses" => $bibleverses]);
     }
 
@@ -24,7 +28,8 @@ class BibleVerseController extends Controller
 
         BibleVerse::create([
             "verse" => request("verse"),
-            "content" => request("content")
+            "content" => request("content"),
+            "user_id" => $authUserId = Auth::user()->id
         ]);
 
         return redirect("/bibleverses");

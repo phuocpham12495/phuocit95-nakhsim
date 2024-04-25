@@ -11,8 +11,8 @@
     <div class="space-y-4">
         @foreach ($bibleverses as $bibleverse)
             <div class="block px-4 py-6 border border-gray-200 rounded-lg">
-                <a href="bibleverses/{{ $bibleverse['id'] }}" class="text-blue-500 hover:underline"><strong>Verse:
-                        {{ $bibleverse['verse'] }}</strong></a>
+                <a href="bibleverses/{{ $bibleverse->id }}" class="text-blue-500 hover:underline"><strong>Verse:
+                        {{ $bibleverse->verse }}</strong></a>
                 <div class="text-sm">Content: {{ $bibleverse->content }}</div>
             </div>
         @endforeach

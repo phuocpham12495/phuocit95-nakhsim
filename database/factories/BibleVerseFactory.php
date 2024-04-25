@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BibleVerse>
@@ -18,7 +19,8 @@ class BibleVerseFactory extends Factory
     {
         return [
             "verse" => fake()->name(),
-            "content" => fake()->text()
+            "content" => fake()->text(),
+            "user_id" => User::factory()
         ];
     }
 }

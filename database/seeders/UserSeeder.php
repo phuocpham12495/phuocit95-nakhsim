@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->userPhuoc()->create();
-        User::factory(8)->create();
+        // User::factory()->userPhuoc()->create();
+        // User::factory(8)->create();
     }
 }
