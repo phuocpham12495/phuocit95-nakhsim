@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:title>Register</x-slot:title>
     <x-slot:heading>Register Page</x-slot:heading>
-    <x-slot:description>Register Description</x-slot:description>
+    <x-slot:description></x-slot:description>
 
     <form method="POST" action="/register">
         @csrf

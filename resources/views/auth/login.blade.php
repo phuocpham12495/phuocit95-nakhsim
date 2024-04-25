@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:title>Log In</x-slot:title>
     <x-slot:heading>Log In Page</x-slot:heading>
-    <x-slot:description>Log In Description</x-slot:description>
+    <x-slot:description></x-slot:description>
 
     <form method="POST" action="/login">
         @csrf

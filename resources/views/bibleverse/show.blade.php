@@ -1,7 +1,7 @@
 <x-layout>
-    <x-slot:title>Job</x-slot:title>
-    <x-slot:heading>Job Page</x-slot:heading>
-    <x-slot:description>Job Description</x-slot:description>
+    <x-slot:title>Bible Verse</x-slot:title>
+    <x-slot:heading>Bible Verse</x-slot:heading>
+    <x-slot:description></x-slot:description>
 
     <h3><strong>{{ $bibleverse['verse'] }}</strong></h3>
     <p>{{ $bibleverse['content'] }}</p>

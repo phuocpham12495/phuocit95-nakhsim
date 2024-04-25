@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot:title>Bible Verse</x-slot:title>
+    <x-slot:title>Bible Verse List</x-slot:title>
     <x-slot:heading>Create and save bible verse</x-slot:heading>
     <x-slot:description>Psalm 119:11 - I have hidden your word in my heart
         that I might not sin against you.</x-slot:description>
