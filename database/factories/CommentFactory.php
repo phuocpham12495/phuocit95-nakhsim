@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\User;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BibleVerse>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Comment>
  */
-class BibleVerseFactory extends Factory
+class CommentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +17,9 @@ class BibleVerseFactory extends Factory
     public function definition(): array
     {
         return [
-            "verse" => fake()->name(),
             "content" => fake()->text(),
-            "user_id" => "1"
+            "post_id" => "1",
+            "user_id" => "1",
         ];
     }
 }

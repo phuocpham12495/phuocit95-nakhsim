@@ -8,14 +8,16 @@
         <x-button href="/bibleverses/create">Add Bible Verse</x-button>
     </div>
 
-    <div class="space-y-4">
+    <ul class="space-y-4">
         @foreach ($bibleverses as $bibleverse)
-            <div class="block px-4 py-6 border border-gray-200 rounded-lg">
-                <a href="bibleverses/{{ $bibleverse->id }}" class="text-blue-500 hover:underline"><strong>Verse:
-                        {{ $bibleverse->verse }}</strong></a>
-                <div class="text-sm">Content: {{ $bibleverse->content }}</div>
-            </div>
+            <li class='flex items-center justify-center'>
+                <div class="rounded-xl border p-5 shadow-md w-9/12 bg-white mb-4">
+                    <a href="bibleverses/{{ $bibleverse->id }}" class="text-blue-500 hover:underline"><strong>Verse:
+                            {{ $bibleverse->verse }}</strong></a>
+                    <div class="text-sm">Content: {{ $bibleverse->content }}</div>
+                </div>
+            </li>
         @endforeach
-    </div>
+    </ul>
     <div>{{ $bibleverses->links() }}</div>
 </x-layout>

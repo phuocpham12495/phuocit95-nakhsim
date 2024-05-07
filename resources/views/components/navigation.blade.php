@@ -15,6 +15,8 @@
                         @auth
                             <x-nav-link href="/bibleverses" active="{{ request()->is('bibleverses') }}" type="a">Bible
                                 Verse</x-nav-link>
+                            <x-nav-link href="/posts" active="{{ request()->is('posts') }}"
+                                type="a">Post</x-nav-link>
                         @endauth
 
                         <x-nav-link href="/about" active="{{ request()->is('about') }}"
@@ -100,6 +102,7 @@
             @auth
                 <x-nav-link-mobile href="/bibleverses" active="{{ request()->is('bibleverses') }}">Bible
                     Verse</x-nav-link-mobile>
+                <x-nav-link-mobile href="/posts" active="{{ request()->is('posts') }}">Post</x-nav-link-mobile>
             @endauth
             <x-nav-link-mobile href="/about" active="{{ request()->is('about') }}">About</x-nav-link-mobile>
             {{-- <x-nav-link-mobile href="/contact" active="{{ request()->is('contact') }}">Contact</x-nav-link-mobile> --}}
@@ -107,6 +110,12 @@
                 <x-nav-link-mobile href="/login" active="{{ request()->is('login') }}">Log In</x-nav-link-mobile>
                 <x-nav-link-mobile href="/register" active="{{ request()->is('register') }}">Register</x-nav-link-mobile>
             @endguest
+            @auth
+                <form method="POST" action="/logout">
+                    @csrf
+                    <x-form-button>Log Out</x-form-button>
+                </form>
+            @endauth
         </div>
         @auth
             <div class="border-t border-gray-700 pb-3 pt-4">
@@ -128,12 +137,6 @@
                                 d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                         </svg>
                     </button>
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <form method="POST" action="/logout">
-                            @csrf
-                            <x-form-button>Log Out</x-form-button>
-                        </form>
-                    </div>
                 </div>
             </div>
         @endauth

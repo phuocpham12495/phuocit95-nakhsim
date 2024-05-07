@@ -12,7 +12,8 @@ class BibleVerseController extends Controller
     public function index() {
         // $bibleverses = BibleVerse::paginate(10);
         $authUserId = Auth::user()->id;
-        $bibleverses = DB::table('bible_verses')->where('user_id', '=', $authUserId)->orderBy("created_at", 'desc')->paginate(10);
+        // $bibleverses = DB::table('bible_verses')->where('user_id', '=', $authUserId)->orderBy("created_at", 'desc')->paginate(10);
+        $bibleverses = BibleVerse::where("user_id", $authUserId)->orderBy('created_at', "desc")->paginate(5);
         return view("bibleverse.index", ["bibleverses" => $bibleverses]);
     }
 

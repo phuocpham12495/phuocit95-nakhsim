@@ -1,65 +1,27 @@
 <x-layout>
     <x-slot:title>Add Bible Verse</x-slot:title>
-    <x-slot:heading>Add Bible Verse Page</x-slot:heading>
-    <x-slot:description>Add Bible Verse Description</x-slot:description>
+    <x-slot:heading>Add Bible Verse</x-slot:heading>
+    <x-slot:description>Add a new bible verse</x-slot:description>
 
-    <form method="POST" action="/bibleverses">
+    <div class="bg-amber-100 border-t border-b border-amber-500 text-amber-700 px-4 py-3 mb-4" role="alert">
+        <p class="font-bold">Create and save a bible verse</p>
+        <p class="text-sm">Psalm 119:11 - I have hidden your word in my heart that I
+            might not sin against you.</p>
+    </div>
+
+    <!-- component -->
+    <form action="/bibleverses" method="POST">
         @csrf
-
-        <div class="space-y-12">
-            <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Create and save a bible verse</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Psalm 119:11 - I have hidden your word in my heart that I
-                    might not sin against you.</p>
-
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                    <div class="sm:col-span-4">
-                        <label for="verse" class="block text-sm font-medium leading-6 text-gray-900">Verse</label>
-                        <div class="mt-2">
-                            <div
-                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="text" name="verse" id="verse"
-                                    class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                    placeholder="Psalm 119:11" required>
-                            </div>
-                            @error('verse')
-                                <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="sm:col-span-4">
-                        <label for="content" class="block text-sm font-medium leading-6 text-gray-900">Content</label>
-                        <div class="mt-2">
-                            <div
-                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <textarea name="content" id="content" rows="4"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="I have hidden your word in my heart that I might not sin against you." required></textarea>
-                            </div>
-                            @error('content')
-                                <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-
-                {{-- <div class="mt-10">
-                    @if ($errors->any())
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li class="text-red-500 italic">{{ $error }} </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </div> --}}
+        <div class="editor mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl">
+            <input id="verse" name="verse" class="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
+                spellcheck="false" placeholder="Verse" type="text">
+            <textarea id="content" name="content"
+                class="mb-2 description bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none" spellcheck="false"
+                placeholder="Content"></textarea>
+            <div class="buttons flex justify-end gap-x-2">
+                <x-button href="/bibleverses">Cancel</x-button>
+                <x-form-button>Post</x-form-button>
             </div>
-        </div>
-
-        <div class="mt-6 flex items-center justify-end gap-x-6">
-            <a type="button" class="text-sm font-semibold leading-6 text-gray-900" href="/bibleverses">Cancel</a>
-            <button type="submit"
-                class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
         </div>
     </form>
 
