@@ -8,7 +8,6 @@ use Illuminate\Auth\Access\Response;
 
 class BibleVersePolicy
 {
-
     public function edit(User $user, BibleVerse $bibleVerse): bool {
         return $bibleVerse->user->is($user);
     }
