@@ -7,7 +7,7 @@
         <x-button href="/posts/create">Add Post</x-button>
     </div>
 
-    <ul class="min-h-screen">
+    <ul class="space-y-4">
         @foreach ($posts as $post)
             <!-- component -->
             <li class='flex items-center justify-center'>
