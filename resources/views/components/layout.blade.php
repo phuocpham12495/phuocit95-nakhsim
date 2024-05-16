@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }} - PhuocIt95</title>
+    <link rel="stylesheet" href="/build/assets/app-Cm8WSGZV.css">
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
@@ -22,6 +24,8 @@
         </main>
         <x-footer></x-footer>
     </div>
+
+    <script src="/build/assets/app-QJMq9KiZ.js"></script>
 </body>
 
 </html>
