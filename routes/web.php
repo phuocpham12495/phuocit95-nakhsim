@@ -40,3 +40,6 @@ Route::post("/register", [RegisterUserController::class, "store"]);
 Route::get("/login", [LoginUserController::class, "create"])->name("login"); // ->name("login") for auth if is not auth redirect this name
 Route::post("/login", [LoginUserController::class, "store"]);
 Route::post("/logout", [LoginUserController::class, "destroy"]);
+
+//Profile
+Route::view("/profile", "profile")->middleware("auth");

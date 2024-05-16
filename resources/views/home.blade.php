@@ -9,8 +9,14 @@
                 <div class="sm:max-w-lg">
                     <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Create and save bible verse
                     </h1>
-                    <p class="mt-4 text-xl text-gray-500">Psalm 119:11 - I have hidden your word in my heart
-                        that I might not sin against you.</p>
+                    {{-- <p class="mt-4 text-xl text-gray-500">Psalm 119:11 - I have hidden your word in my heart
+                        that I might not sin against you.</p> --}}
+                </div>
+                <div class="mt-5 sm:max-w-lg">
+                    @auth
+                        <x-button href="/bibleverses">Bible
+                            Verse</x-button>
+                    @endauth
                 </div>
                 <div>
                     <div class="mt-10">
@@ -29,10 +35,7 @@
                             </div>
                         </div>
 
-                        @auth
-                            <x-button href="/bibleverses">Bible
-                                Verse</x-button>
-                        @endauth
+
                     </div>
                 </div>
             </div>
