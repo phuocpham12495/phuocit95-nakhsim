@@ -1,5 +1,3 @@
-// import $ from "jquery";
-
 class Menu {
     //1. describe and create/initiate our object
     constructor() {
@@ -21,8 +19,6 @@ class Menu {
         //this.document.on("click", this.resetMenu.bind(this));
         this.myMenuButton.on("click", this.toggleMenu.bind(this)); // function "on" change this from "object" to "html element" => bind "this object" to "this html element"
         this.myMobileMenuButton.on("click", this.toggleMenu.bind(this));
-        this.myMenuContent.hide();
-        this.myMobileMenuContent.hide();
     }
 
     //3. methods (function, action...)

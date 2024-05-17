@@ -20,9 +20,10 @@
                 @auth
                     <a href="/bibleverses">Bible Verse<span aria-hidden="true">&rarr;</span></a>
                     <a href="/posts">Post<span aria-hidden="true">&rarr;</span></a>
+                    <a href="/football">Football<span aria-hidden="true">&rarr;</span></a>
                 @endauth
 
-                <a href="/about">About<span aria-hidden="true">&rarr;</span></a>
+                {{-- <a href="/about">About<span aria-hidden="true">&rarr;</span></a> --}}
                 {{-- <a href="/contact">Contact<span aria-hidden="true">&rarr;</span></a> --}}
             </div>
             <div class="text-white">Created in 2024 by PhuocIt95</div>

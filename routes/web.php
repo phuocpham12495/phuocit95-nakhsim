@@ -9,6 +9,8 @@ use App\Http\Controllers\LoginUserController;
 
 Route::view("/", "home");
 
+Route::view("/football", "football")->middleware("auth");;
+
 Route::view("/about", "about");
 
 Route::view("/contact", "contact");
