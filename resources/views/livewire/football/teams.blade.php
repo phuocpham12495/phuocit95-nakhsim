@@ -10,25 +10,30 @@
             class="mt-4 animate-spin w-10 h-10 border-[3px] border-current border-t-transparent text-blue-600 rounded-full"
             role="status" aria-label="loading">
         </div>
+        <div>
+            <em>{{ $errorMsg }}</em>
+        </div>
     </form>
-    <ul role="list" class="divide-y divide-gray-100">
+    <ul wire:loading.remove role="list" class="divide-y divide-gray-100">
         @foreach ($teams as $team)
             <li class="flex justify-between gap-x-6 py-5">
                 <div class="flex min-w-0 gap-x-4">
                     <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="{{ $team['team_badge'] }}"
                         alt="NF" onerror="this.onerror=null; this.src='/img/sample-avatar.svg';">
                     <div class="min-w-0 flex-auto">
-                        <p class="text-sm font-semibold leading-6 text-gray-900">Team name</p>
-                        <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{ $team['team_name'] }}</p>
+                        <p class="text-sm font-semibold leading-6 text-gray-900">{{ $team['team_name'] }}</p>
+                        <p class="mt-1 truncate text-xs leading-5 text-gray-500">Team key: {{ $team['team_key'] }}</p>
                     </div>
                 </div>
                 <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                     <p class="text-sm leading-6 text-gray-900">{{ $team['team_country'] }}</p>
-                    <p class="mt-1 text-xs leading-5 text-gray-500">Coach: {{ $team['coaches'][0]['coach_name'] }}</p>
-                </div>
-                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-gray-900">Team Key</p>
-                    <p class="mt-1 text-xs leading-5 text-gray-500">{{ $team['team_key'] }}</p>
+                    @if (isset($team['coaches'][0]['coach_name']))
+                        <p class="mt-1 text-xs leading-5 text-gray-500">Coach: {{ $team['coaches'][0]['coach_name'] }}
+                        </p>
+                    @else
+                        <p class="mt-1 text-xs leading-5 text-gray-500">Coach: No info
+                        </p>
+                    @endforelse
                 </div>
             </li>
         @endforeach

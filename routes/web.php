@@ -9,7 +9,7 @@ use App\Http\Controllers\LoginUserController;
 
 Route::view("/", "home");
 
-Route::view("/football", "football")->middleware("auth");;
+Route::view("/football", "football")->middleware("auth");
 
 Route::view("/about", "about");
 
@@ -45,3 +45,7 @@ Route::post("/logout", [LoginUserController::class, "destroy"]);
 
 //Profile
 Route::view("/profile", "profile")->middleware("auth");
+
+//API
+Route::get('/api/v1/post/{post}', [PostController::class, "exposeAPI"])->middleware("auth")->can("exposeAPI", "post");
+Route::get('/api/v1/comment/{comment}', [CommentController::class, "exposeAPI"])->middleware("auth")->can("exposeAPI", "comment");

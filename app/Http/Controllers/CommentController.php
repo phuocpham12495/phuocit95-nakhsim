@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\CommentResource;
 
 class CommentController extends Controller
 {
@@ -28,5 +29,9 @@ class CommentController extends Controller
 
         //redirect
         return redirect("/posts/" . $postId);
+    }
+
+    public function exposeAPI(Comment $comment) {
+        return new CommentResource($comment);
     }
 }

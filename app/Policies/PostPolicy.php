@@ -11,4 +11,8 @@ class PostPolicy
     public function delete(User $user, Post $post): bool {
         return $post->user->is($user);
     }
+
+    public function exposeAPI(User $user, Post $post): bool {
+        return $post->user->is($user);
+    }
 }
