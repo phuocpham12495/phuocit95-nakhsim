@@ -64,7 +64,7 @@
                                 <div class="flex items-center space-x-6 lg:space-x-8">
                                     <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                                         <div class="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
-                                            <img src="/img/avatar.jpg" alt=""
+                                            <img src="/img/logo.png" alt=""
                                                 class="h-full w-full object-cover object-center">
                                         </div>
                                     </div>

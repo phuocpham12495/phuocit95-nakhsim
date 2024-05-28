@@ -4,7 +4,7 @@
             <div class="flex items-center">
                 <div class="flex-shrink-0">
                     <a href="/">
-                        <img class="h-8 w-8 inline-block" src="/img/sample-logo.png" alt="Your Company">
+                        <img class="h-8 w-8 inline-block" src="/img/logo.png" alt="Your Company">
                         <span class="text-white rounded-md px-2 py-2 text-sm font-medium">PhuocIt95</span>
                     </a>
                 </div>
