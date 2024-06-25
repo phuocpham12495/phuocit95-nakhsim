@@ -14,8 +14,8 @@ return new class extends Migration
     {
         Schema::create('bible_verses', function (Blueprint $table) {
             $table->id();
-            $table->string("verse", 30);
-            $table->text("content");
+            $table->string('verse', 30);
+            $table->text('content');
             $table->foreignIdFor(User::class);
             $table->timestamps();
         });

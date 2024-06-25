@@ -11,16 +11,16 @@ class CommentController extends Controller
 {
     public function store() {
         request()->validate([
-            "content" => ["required"]
+            'content' => ['required']
         ]);
 
         Comment::create([
-            "content" => request("content"),
-            "post_id" => request("postId"),
-            "user_id" => $authUserId = Auth::user()->id
+            'content' => request('content'),
+            'post_id' => request('postId'),
+            'user_id' => $authUserId = Auth::user()->id
         ]);
-        $postId = request("postId");
-        return redirect("/posts/" . $postId);
+        $postId = request('postId');
+        return redirect('/posts/' . $postId);
     }
 
     public function destroy(Comment $comment) {
@@ -28,7 +28,7 @@ class CommentController extends Controller
         $comment->delete();
 
         //redirect
-        return redirect("/posts/" . $postId);
+        return redirect('/posts/' . $postId);
     }
 
     public function exposeAPI(Comment $comment) {

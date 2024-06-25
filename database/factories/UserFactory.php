@@ -45,8 +45,8 @@ class UserFactory extends Factory
     public function userPhuoc(): static
     {
         return $this->state(fn (array $attributes) => [
-            'name' => "Pham Huu Phuoc",
-            'email' => "phuocpham12495@gmail.com",
+            'name' => 'Pham Huu Phuoc',
+            'email' => 'phuocpham12495@gmail.com',
         ]);
     }
 }

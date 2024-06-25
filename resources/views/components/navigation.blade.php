@@ -22,9 +22,9 @@
                                 type="a">Football</x-nav-link>
                         @endauth
 
-                        {{-- <x-nav-link href="/about" active="{{ request()->is('about') }}"
+                        {{-- <x-nav-link href="/about" active="{{ request()->is("about") }}"
                             type="a">About</x-nav-link> --}}
-                        {{-- <x-nav-link href="/contact" active="{{ request()->is('contact') }}"
+                        {{-- <x-nav-link href="/contact" active="{{ request()->is("contact") }}"
                             type="a">Contact</x-nav-link> --}}
                     </div>
                 </div>
@@ -92,15 +92,15 @@
                     <span class="absolute -inset-0.5"></span>
                     <span class="sr-only">Open main menu</span>
                     <!-- Menu open: "hidden", Menu closed: "block" -->
-                    <svg :class="open ? 'hidden' : 'block'" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    <svg :class="open ?"hidden" : "block"" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            d=" M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                     <!-- Menu open: "block", Menu closed: "hidden" -->
-                    <svg :class="!open ? 'hidden' : 'block'" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    <svg :class="!open ?"hidden" : "block"" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d=" M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -118,8 +118,8 @@
                 <x-nav-link-mobile href="/posts" active="{{ request()->is('posts') }}">Post</x-nav-link-mobile>
                 <x-nav-link-mobile href="/football" active="{{ request()->is('football') }}">Football</x-nav-link-mobile>
             @endauth
-            {{-- <x-nav-link-mobile href="/about" active="{{ request()->is('about') }}">About</x-nav-link-mobile> --}}
-            {{-- <x-nav-link-mobile href="/contact" active="{{ request()->is('contact') }}">Contact</x-nav-link-mobile> --}}
+            {{-- <x-nav-link-mobile href="/about" active="{{ request()->is("about") }}">About</x-nav-link-mobile> --}}
+            {{-- <x-nav-link-mobile href="/contact" active="{{ request()->is("contact") }}">Contact</x-nav-link-mobile> --}}
             @guest
                 <x-nav-link-mobile href="/login" active="{{ request()->is('login') }}">Log In</x-nav-link-mobile>
                 <x-nav-link-mobile href="/register" active="{{ request()->is('register') }}">Register</x-nav-link-mobile>

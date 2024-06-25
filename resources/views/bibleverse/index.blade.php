@@ -10,7 +10,7 @@
 
     <ul class="space-y-4">
         @foreach ($bibleverses as $bibleverse)
-            <li class='flex items-center justify-center'>
+            <li class="flex items-center justify-center">
                 <div class="rounded-xl border p-5 shadow-md w-9/12 bg-white mb-4">
                     <a href="bibleverses/{{ $bibleverse->id }}" class="text-blue-500 hover:underline"><strong>Verse:
                             {{ $bibleverse->verse }}</strong></a>

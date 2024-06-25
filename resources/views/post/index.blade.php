@@ -10,7 +10,7 @@
     <ul class="space-y-4">
         @foreach ($posts as $post)
             <!-- component -->
-            <li class='flex items-center justify-center'>
+            <li class="flex items-center justify-center">
                 <div class="rounded-xl border p-5 shadow-md w-9/12 bg-white mb-4">
                     <div class="flex w-full items-center justify-between border-b pb-3">
                         <div class="flex items-center space-x-3">

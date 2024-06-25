@@ -18,9 +18,9 @@ class BibleVerseFactory extends Factory
     public function definition(): array
     {
         return [
-            "verse" => fake()->name(),
-            "content" => fake()->text(),
-            "user_id" => "1"
+            'verse' => fake()->name(),
+            'content' => fake()->text(),
+            'user_id' => '1'
         ];
     }
 }

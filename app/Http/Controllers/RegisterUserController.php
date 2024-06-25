@@ -10,15 +10,15 @@ use Illuminate\Validation\Rules\Password;
 class RegisterUserController extends Controller
 {
     public function create() {
-        return view("auth.register");
+        return view('auth.register');
     }
 
     public function store() {
         //validate
         $attributes = request()->validate([
-            "name" => ["required"],
-            "email" => ["required", "email"],
-            "password" => ["required", Password::min(6), "confirmed"] //password_confirmation
+            'name' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['required', Password::min(6), 'confirmed'] //password_confirmation
         ]);
 
         // dd($attributes);
@@ -30,6 +30,6 @@ class RegisterUserController extends Controller
         Auth::login($user);
 
         //redirect
-        return redirect("/");
+        return redirect('/');
     }
 }

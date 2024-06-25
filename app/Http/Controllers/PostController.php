@@ -12,40 +12,40 @@ class PostController extends Controller
 {
     public function index() {
         $authUserId = Auth::user()->id;
-        // $posts = DB::table('posts')->where('user_id', '=', $authUserId)->orderBy("created_at", 'desc')->paginate(10);
-        $posts = Post::where("user_id", $authUserId)->orderBy('created_at', "desc")->paginate(5);
+        // $posts = DB::table('posts')->where('user_id', '=', $authUserId)->orderBy('created_at', 'desc')->paginate(10);
+        $posts = Post::where('user_id', $authUserId)->orderBy('created_at', 'desc')->paginate(5);
         // $posts = Post::whereBelongsTo(Auth::user())->paginate(5);
-        return view("post.index", ["posts" => $posts]);
+        return view('post.index', ['posts' => $posts]);
     }
 
     public function create() {
-        return view("post.create");
+        return view('post.create');
     }
 
     public function store() {
         request()->validate([
-            "title" => ["required"],
-            "content" => ["required"]
+            'title' => ['required'],
+            'content' => ['required']
         ]);
 
         Post::create([
-            "title" => request("title"),
-            "content" => request("content"),
-            "user_id" => $authUserId = Auth::user()->id
+            'title' => request('title'),
+            'content' => request('content'),
+            'user_id' => $authUserId = Auth::user()->id
         ]);
 
-        return redirect("/posts");
+        return redirect('/posts');
     }
 
     public function show(Post $post) {
-        return view("post.show", ["post" => $post]);
+        return view('post.show', ['post' => $post]);
     }
 
     public function destroy(Post $post) {
         $post->delete();
 
         //redirect
-        return redirect("/posts");
+        return redirect('/posts');
     }
 
     public function exposeAPI(Post $post) {
